@@ -1,75 +1,127 @@
 # Waste_Classification
 To develop a CNN model for classifying images of plastic waste, you'll follow a series of steps, including data collection, model architecture design, training, and evaluation.For the Data Collection step, the goal is to gather and prepare a dataset of images for your CNN model. 
-For the Data Collection step, the goal is to gather and prepare a dataset of images for your CNN model. The steps you take here can vary depending on whether a suitable dataset already exists or if you'll need to create your own. 
 
-In the Data Collection phase, you are focused on gathering a suitable dataset of images that represent the types of plastic waste you aim to classify. Here’s what you need to do and what changes or adjustments you can make:
-<h2>Steps to Follow:</h2>
-Identify the Types of Plastic Waste to Classify:
-Decide on the specific categories or types of plastic waste you want to classify, such as plastic bottles, plastic bags, plastic packaging, etc.
-Think about how detailed or broad your classification should be. For example, you could classify broader categories like “plastic waste” or more specific types (e.g., “PET bottles,” “plastic cups”).
+ <h1 align="center">Hi there, I'm Kodali Suchitra Kamala 👋</h1>
 
-Search for an Existing Dataset:
-Kaggle: 
-Search for publicly available datasets on platforms like Kaggle. There may be pre-labeled datasets such as the Plastic Waste Classification Dataset or similar datasets relevant to your task.
-Other Open Datasets: Look for datasets provided by universities, research institutions, or environmental organizations. Websites like Google Dataset Search, UCI Machine Learning Repository, or data.gov might have datasets that suit your needs.
-
-If you find a suitable dataset:
-Assess the Dataset: Check whether the dataset includes images that match your classification needs. For example, does it have the specific types of plastic waste you want? Are the images labeled clearly?
-
-Dataset Size:
-Ensure the dataset is large enough to train your CNN model effectively, with sufficient images per category.
-Dataset Quality: Review the image quality, and ensure that the images are diverse enough to represent real-world variations (e.g., different angles, lighting conditions, backgrounds, etc.).
-
-Manually Label Images (If Needed):
-If you cannot find a pre-labeled dataset or need to extend an existing one, you will have to label the images yourself.
-Use an image labeling tool to manually assign labels to each image according to the plastic type it represents. This could be a time-consuming process, especially for large datasets.
-
-Scrape Images if No Dataset Exists:
-If no suitable dataset is available, consider scraping images from sources like Google Images or other public websites. However, ensure that you follow copyright rules and only use images that are publicly available for such purposes.
-Use scraping tools to automate the process of downloading images based on specific keywords (e.g., “plastic bottle,” “plastic bag,” etc.).
-
-Organize the Dataset:
-Structure the dataset so that each image is stored in folders corresponding to their label (e.g., a folder for each type of plastic waste).
-
-Example:
-bash
-Copy
-/dataset
-    /plastic_bottles
-        image1.jpg
-        image2.jpg
-        ...
-    /plastic_bags
-        image1.jpg
-        image2.jpg
-        ...
+---
 
 
-Ensure that your dataset is split into training, validation, and test sets to evaluate the model’s performance effectively.
-Changes You Can Make:
+## Overview  
+This project focuses on building a Convolutional Neural Network (CNN) model to classify images of plastic waste into various categories. The primary goal is to enhance waste management systems by improving the segregation and recycling process using deep learning technologies.  
 
-Class Adjustments:
-Granularity: You may need to adjust the level of detail in your classification. For example, you might merge categories (e.g., “bottles” and “cans” into a single class) or break them down further (e.g., “plastic bottles” into categories like “PET bottles,” “HDPE bottles”).
-New Categories: If you want to classify more specific types of plastic waste (e.g., specific brands or products), you can add or modify categories accordingly.
+---
 
-Balancing the Dataset:
-If some classes (types of plastic waste) are underrepresented, you can consider collecting more images for those categories or applying data augmentation techniques to artificially increase their presence.
-Alternatively, you could use techniques like oversampling (duplicating images from underrepresented classes) or undersampling (reducing images from overrepresented classes) to address class imbalance.
+## Table of Contents  
+- [Project Description](#project-description)  
+- [Dataset](#dataset)  
+- [Model Architecture](#model-architecture)  
+- [Training](#training)  
+- [Weekly Progress](#weekly-progress)  
+- [How to Run](#how-to-run)  
+- [Technologies Used](#technologies-used)  
+- [Future Scope](#future-scope)  
+- [Contributing](#contributing)  
+- [License](#license)  
 
-Image Quality and Diversity:
-To ensure that the model generalizes well to real-world scenarios, collect images that reflect diverse environmental settings (e.g., images taken outdoors, images with various lighting, images with different backgrounds).
-Avoid over-staging the images (e.g., all images taken under ideal lighting conditions). The more varied and realistic the images are, the better the model will perform in diverse situations.
+---
 
-Data Augmentation:
-Apply data augmentation strategies such as rotating, flipping, zooming, and adjusting brightness/contrast to artificially increase the variety of images in your dataset. This will help improve the robustness of the model and prevent overfitting.
+## Project Description  
+Plastic pollution is a growing concern globally, and effective waste segregation is critical to tackling this issue. This project employs a CNN model to classify plastic waste into distinct categories, facilitating automated waste management.  
 
-Data Cleaning:
-Remove any irrelevant or low-quality images (e.g., blurry or incorrectly labeled images). Ensure the images are properly labeled and relevant to the categories you want to classify.
-Summary:
-Dataset Selection: Use existing datasets if they match your needs or scrape new data if no suitable dataset exists.
-Labeling: Manually label images or adjust labels to suit the categories you want to classify.
-Dataset Quality and Balance: Ensure high-quality, diverse images and address any class imbalance.
-Adjust Categories: Tailor the dataset by changing the granularity of the classes if needed.
-Preprocessing: Apply necessary data augmentation and clean the dataset for better model performance.
+## Dataset  
+The dataset used for this project is the *Waste Classification Data* by Sashaank Sekar. It contains a total of 25,077 labeled images, divided into two categories: *Organic* and *Recyclable*. This dataset is designed to facilitate waste classification tasks using machine learning techniques.  
 
-By taking these steps and making the appropriate adjustments, you will have a properly prepared dataset for training your CNN model for plastic waste classification.
+
+### Key Details:
+- *Total Images*: 25,077  
+  - *Training Data*: 22,564 images (85%)  
+  - *Test Data*: 2,513 images (15%)  
+- *Classes*: Organic and Recyclable  
+- *Purpose*: To aid in automating waste management and reducing the environmental impact of improper waste disposal.
+  
+### Approach:  
+- Studied waste management strategies and white papers.  
+- Analyzed the composition of household waste.  
+- Segregated waste into two categories (Organic and Recyclable).  
+- Leveraged IoT and machine learning to automate waste classification.  
+
+### Dataset Link:  
+You can access the dataset here: [Waste Classification Data](https://www.kaggle.com/datasets/techsash/waste-classification-data).  
+
+Note: Ensure appropriate dataset licensing and usage guidelines are followed.  
+
+
+## Model Architecture  
+The CNN architecture includes:  
+- *Convolutional Layers:* Feature extraction  
+- *Pooling Layers:* Dimensionality reduction  
+- *Fully Connected Layers:* Classification  
+- *Activation Functions:* ReLU and Softmax  
+
+
+## Training  
+- *Optimizer:* Adam  
+- *Loss Function:* Categorical Crossentropy  
+- *Epochs:* Configurable (default: 25)  
+- *Batch Size:* Configurable (default: 32)  
+
+Data augmentation techniques were utilized to enhance model performance and generalizability.  
+
+## Weekly Progress  
+This section will be updated weekly with progress details and corresponding Jupyter Notebooks.  
+
+### Week 1: Libraries, Data Import, and Setup  
+- *Date:* 20th January 2025 - 27th January 2025  
+- *Activities:*  
+  - Imported the required libraries and frameworks.  
+  - Set up the project environment.  
+  - Explored the dataset structure.  
+  - Note: If the file takes too long to load, you can view the Kaggle notebook directly [Kaggle Notebook](https://www.kaggle.com/code/hardikksankhla/cnn-plastic-waste-classification).  
+
+- *Notebooks:*  
+  - [Week1-Libraries-Importing-Data-Setup.ipynb](Week1-Libraries-Importing-Data-Setup.ipynb)  
+  - [Kaggle Notebook](https://www.kaggle.com/code/kodalisuchitrakamala/cnn-plastic-waste-classification)  
+
+### Week 2: TBD  
+Details to be added after completion.  
+
+### Week 3: TBD  
+Details to be added after completion.  
+
+## How to Run  
+1. Clone the repository:  
+   bash  
+   git clone https://github.com/KodaliSuchitraKamala/CNN-Plastic-Waste-Classification  
+   cd CNN-Plastic-Waste-Classification
+     
+2. Install the required dependencies:  
+   bash  
+   pip install -r requirements.txt  
+     
+3. Run the training script:  Details to be added after completion.  
+   bash  
+   python train.py  
+     
+4. For inference, use the following command:  Details to be added after completion.  
+   bash  
+   python predict.py --image_path /path/to/image.jpg  
+     
+
+## Technologies Used  
+- Python  
+- TensorFlow/Keras  
+- OpenCV  
+- NumPy  
+- Pandas  
+- Matplotlib  
+
+## Future Scope  
+- Expanding the dataset to include more plastic waste categories.  
+- Deploying the model as a web or mobile application for real-time use.  
+- Integration with IoT-enabled waste management systems.  
+
+## Contributing  
+Contributions are welcome! If you would like to contribute, please open an issue or submit a pull request.  
+
+## License  
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
