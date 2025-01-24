@@ -3,7 +3,7 @@ To develop a CNN model for classifying images of plastic waste, you'll follow a 
 For the Data Collection step, the goal is to gather and prepare a dataset of images for your CNN model. The steps you take here can vary depending on whether a suitable dataset already exists or if you'll need to create your own. 
 
 In the Data Collection phase, you are focused on gathering a suitable dataset of images that represent the types of plastic waste you aim to classify. Here’s what you need to do and what changes or adjustments you can make:
-Steps to Follow:
+<h2>Steps to Follow:</h2>
 Identify the Types of Plastic Waste to Classify:
 Decide on the specific categories or types of plastic waste you want to classify, such as plastic bottles, plastic bags, plastic packaging, etc.
 Think about how detailed or broad your classification should be. For example, you could classify broader categories like “plastic waste” or more specific types (e.g., “PET bottles,” “plastic cups”).
