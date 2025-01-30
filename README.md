@@ -67,6 +67,12 @@ The CNN architecture includes:
 - *Fully Connected Layers:* Classification
 - *Activation Functions:* ReLU and Softmax
 
+### Basic CNN Architecture  
+Below is a visual representation of the CNN architecture used in this project:  
+
+<p align="center">
+  <img src="https://github.com/KodaliSuchitraKamala/CNN-Plastic-Waste-Classification/blob/main/Images/CNN-Architecture.jpg" style="width:80%;">
+</p>
 
 ## Training
 - *Optimizer:* Adam
